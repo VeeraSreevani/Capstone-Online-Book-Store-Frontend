@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+const apiKey = import.meta.env.VITE_GOOGLEBOOK_API_KEY;
 
 const Books = () => {
   const { category } = useParams();  // Get category from URL parameter
@@ -12,7 +13,7 @@ const Books = () => {
   }, [category]);
 
   const fetchBooks = (category) => {
-    const apiKey = 'import.meta.env.VITE_GOOGLEBOOK_API_KEY'; 
+    
     setLoading(true);
     setError(null);
 

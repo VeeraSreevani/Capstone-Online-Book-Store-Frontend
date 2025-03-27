@@ -14,7 +14,7 @@ const Wishlist = ({ userId }) => {
   // Fetch wishlist data from backend
   const fetchWishlist = async () => {
     try {
-      const response = await axios.get(`/api/wishlist/${userId}`);
+      const response = await axios.get(`${BASE_URL}/api/wishlist/${userId}`);
       console.log(response.data);
       setWishlist(response.data.wishlistItems);
       setLoading(false);
@@ -27,7 +27,7 @@ const Wishlist = ({ userId }) => {
   // Add book to the wishlist
   const addToWishlist = async (bookId) => {
     try {
-      const response = await axios.post('/api/wishlist', { userId, bookId });
+      const response = await axios.post(`${BASE_URL}/api/wishlist', { userId, bookId }`);
       alert(response.data.message);
       fetchWishlist(); // Refresh wishlist after adding
     } catch (err) {
@@ -38,7 +38,7 @@ const Wishlist = ({ userId }) => {
   // Remove book from the wishlist
   const removeFromWishlist = async (bookId) => {
     try {
-      const response = await axios.delete(`/api/wishlist/${userId}/${bookId}`);
+      const response = await axios.delete(`${BASE_URL}/api/wishlist/${userId}/${bookId}`);
       alert(response.data.message);
       fetchWishlist(); // Refresh wishlist after removal
     } catch (err) {
@@ -49,7 +49,7 @@ const Wishlist = ({ userId }) => {
   // Update wishlist item (e.g., change status, etc.)
   const updateWishlistItem = async (bookId, updates) => {
     try {
-      const response = await axios.patch(`/api/wishlist/${userId}/${bookId}`, updates);
+      const response = await axios.patch(`${BASE_URL}/api/wishlist/${userId}/${bookId}`, updates);
       alert('Wishlist updated');
       fetchWishlist(); // Refresh wishlist after update
     } catch (err) {

@@ -19,8 +19,9 @@ function Navbar() {
           <Link to="/" className="text-xl font-bold italic">
             Veera's📚BookBuddies
           </Link>
+          <a href="/">🏠</a>
         </div>
-
+    
         {/* Search bar */}
         <div className="flex ml-6">
           <input

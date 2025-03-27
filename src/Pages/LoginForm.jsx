@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function LoginForm() {
     const [login, setLogin] = useState({
@@ -14,7 +15,7 @@ function LoginForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:4000/api/user', login);
+            const res = await axios.post(`${BASE_URL}/api/user`, login);
             alert('Signed-Up successfully!')
             window.location.href = '/'
         } catch (err) {

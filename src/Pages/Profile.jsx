@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Profile = () => {
   const [users, setUsers] = useState([]);
@@ -11,7 +12,7 @@ const Profile = () => {
   useEffect(() => {
     // Fetch all users
     axios
-      .get("http://localhost:4000/api/user")
+      .get(`${BASE_URL}/api/user`)
       .then((response) => setUsers(response.data))
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
@@ -28,7 +29,7 @@ const Profile = () => {
 
   const handleSave = () => {
     axios
-      .patch(`http://localhost:4000/api/user/${editUserId}`, editUserData)
+      .patch(`${BASE_URL}/api/user/${editUserId}`, editUserData)
       .then((response) => {
         setUsers((prevUsers) =>
           prevUsers.map((user) =>
@@ -42,7 +43,7 @@ const Profile = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:4000/api/user/${id}`)
+      .delete(`${BASE_URL}/api/user/${id}`)
       .then(() => {
         setUsers((prevUsers) => prevUsers.filter((user) => user._id !== id));
       })
