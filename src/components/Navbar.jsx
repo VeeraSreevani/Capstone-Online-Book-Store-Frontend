@@ -57,31 +57,31 @@ function Navbar() {
           <Link to="/books" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Books
           </Link>
-          <Link to="/fiction" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books/fiction" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Fiction
           </Link>
-          <Link to="/nonfiction" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books/nonfiction" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Non-Fiction
           </Link>
-          <Link to="/kids" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books/kids" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Kids
           </Link>
-          <Link to="/teens" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books/teens" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Teens & Young Age
           </Link>
           <Link to="/ebooks" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             E-Books
           </Link>
-          <Link to="/ebooks" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books/funco" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Funko
           </Link>
-          <Link to="/ebooks" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books/toys" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Toys & Games
           </Link>
-          <Link to="/ebooks" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books/gifts" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             Gift Shop
           </Link>
-          <Link to="/ebooks" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
+          <Link to="/books" className="px-4 py-2 rounded-md font-semibold hover:bg-cyan-500">
             SALE
           </Link>
           {/* <button
@@ -124,9 +124,9 @@ function Navbar() {
                   >
                     E-Books
                   </button> */}
-          <Link to="/wishlist" className="flex items-center space-x-4">
+          {/* <Link to="/wishlist" className="flex items-center space-x-4">
             ❤️ Favorites
-          </Link>
+          </Link> */}
         </div>
       </nav>
     </div>

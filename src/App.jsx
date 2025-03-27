@@ -16,6 +16,7 @@ import Wishlist from './Pages/Wishlist';
 import Searchpage from './Pages/Searchpage';
 import LoginForm from './Pages/LoginForm';
 import Profile from './Pages/Profile';
+import  Books  from './Pages/Books';
 
 function App() {
   const [books,setBooks] = useState([]);
@@ -37,6 +38,7 @@ function App() {
       <nav>
         <a href="/">🏠</a>
         {/* <a href="/login">Login</a>  */}
+        
       </nav>
       <Routes>
         <Route path="/" element={<Homepage onAddToWishlist={handleAddToWishlist}/>}/>
@@ -45,6 +47,8 @@ function App() {
         <Route path="/search" element={<Searchpage/>}/>
         <Route path="/login" element={<LoginForm/>}/> 
         <Route path="/user" element={<Profile/>}/>
+        <Route path="/books" element={<Books />} />
+        <Route path="/books/:category" element={<Books />} />
       </Routes>  
     </div>
   )

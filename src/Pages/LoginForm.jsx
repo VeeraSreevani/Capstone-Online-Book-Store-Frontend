@@ -15,7 +15,7 @@ function LoginForm() {
         e.preventDefault();
         try {
             const res = await axios.post('http://localhost:4000/api/user', login);
-            alert('Login successfully!')
+            alert('Signed-Up successfully!')
             window.location.href = '/'
         } catch (err) {
             console.error('Error Login: ', err);

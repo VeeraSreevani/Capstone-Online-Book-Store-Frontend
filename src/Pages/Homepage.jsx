@@ -82,16 +82,16 @@ const Homepage = () => {
         <BookCarousel books={fictionBooks} category="Fiction" onAddToWishlist={handleAddToWishlist} />
 
         {/* Carousel for Best Seller */}
-        <h2 className="text-1xl font-semibold mt-8 mb-4">Best Seller</h2>
+        {/* <h2 className="text-1xl font-semibold mt-8 mb-4">Best Seller</h2> */}
         <BookCarousel books={bestSellerBooks} category="Best Seller" onAddToWishlist={handleAddToWishlist}/>
 
         {/* Carousel for Recently Added */}
-        <h2 className="text-1xl font-semibold mt-8 mb-4">Recently Added</h2>
+        {/* <h2 className="text-1xl font-semibold mt-8 mb-4">Recently Added</h2> */}
         <BookCarousel books={recentlyAddedBooks} category="Recently Added" onAddToWishlist={handleAddToWishlist}/>
 
         {/* Carousel for Fiction */}
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Non-Fiction</h2>
-        <BookCarousel books={fictionBooks} category="Fiction" onAddToWishlist={handleAddToWishlist}/>
+        {/* <h2 className="text-2xl font-semibold mt-8 mb-4">Non-Fiction</h2> */}
+        <BookCarousel books={fictionBooks} category="Non-Fiction" onAddToWishlist={handleAddToWishlist}/>
         
         {/* have to work on Pagination */}
       </div>
