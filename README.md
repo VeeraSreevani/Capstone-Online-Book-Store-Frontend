@@ -6,6 +6,9 @@ This project is the frontend implementation of an online book store. The applica
 ## GITHUB link to go through
 https://github.com/VeeraSreevani/Capstone-Online-Book-Store-Frontend
 
+## Jira link to track the Project 
+https://sreevaniveera.atlassian.net/jira/software/projects/BOOK/boards/2
+
 ## Technologies Used
 - **HTML5**: For structuring the web pages.
 - **CSS3**: For styling and layout design.
