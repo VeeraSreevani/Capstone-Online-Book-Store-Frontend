@@ -9,6 +9,9 @@ https://github.com/VeeraSreevani/Capstone-Online-Book-Store-Frontend
 ## Jira link to track the Project 
 https://sreevaniveera.atlassian.net/jira/software/projects/BOOK/boards/2
 
+## Netlify Deployment Link for frontend
+https://veeras-online-bookstore.netlify.app/
+
 ## Technologies Used
 - **HTML5**: For structuring the web pages.
 - **CSS3**: For styling and layout design.
