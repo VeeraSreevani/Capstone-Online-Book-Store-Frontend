@@ -38,9 +38,9 @@ function Navbar() {
         </div>
         {/* Wishlist & Cart*/}
         <div className="flex items-center space-x-4">
-          <Link to="/login" className="hover:underline">
-            Login/SignUp
-          </Link>
+          <Link to="/user" className="hover:underline">Admin</Link>
+          <Link to="/login" className="hover:underline">SignUp</Link>
+
           {/* <Link to='/signUp' className='hover:underline'>Sign-Up</Link> */}
           <Link to="/wishlist" className="hover:underline">
             ❤️ WishList

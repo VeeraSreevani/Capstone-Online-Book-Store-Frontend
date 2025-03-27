@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
-import BookCarousal from '../components/BookCarousal';
+import BookCarousel from '../components/BookCarousal';
+import { useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
   const [bestSellerBooks, setBestSellerBooks] = useState([]);
   const [recentlyAddedBooks, setRecentlyAddedBooks] = useState([]);
   const [fictionBooks, setFictionBooks] = useState([]);
-  
+  const navigate = useNavigate();
+  const userId = '67df566f898b12f273c87351';
+
   // Fetch books for each category
   useEffect(() => {
     // Fetch Best Seller Books
@@ -50,8 +53,24 @@ const Homepage = () => {
   const handleSearch = async (query) => {
     const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
     // Update your books state based on search
-    setBestSellerBooks(response.data.items || []); // Just an example to show search functionality
+    setBestSellerBooks(response.data.items || []); 
   };
+    // Handle adding to wishlist
+    const handleAddToWishlist = async (book) => {
+        console.log(book);
+        const{bookId,title,authors,imageLinks}=book
+        try {
+          const response = await axios.post('/api/wishlist', {
+            userId,
+            bookId,
+            title,
+            authors,
+            thumbnail: imageLinks?.thumbnail,
+          });
+          console.log('Book added to wishlist:', response.data);
+        } catch (error) {
+          console.error('Error adding book to wishlist:', error);
+        }};
 
   return (
     <div>
@@ -60,20 +79,19 @@ const Homepage = () => {
         <h1 className="text-3xl font-bold text-center my-4">Welcome to the Bookstore</h1>
 
          {/* Carousel for Fiction */}
-         <h2 className="text-2xl font-semibold mt-8 mb-4">Fiction</h2>
-        <BookCarousal books={fictionBooks} category="Fiction" />
+        <BookCarousel books={fictionBooks} category="Fiction" onAddToWishlist={handleAddToWishlist} />
 
         {/* Carousel for Best Seller */}
         <h2 className="text-1xl font-semibold mt-8 mb-4">Best Seller</h2>
-        <BookCarousal books={bestSellerBooks} category="Best Seller" />
+        <BookCarousel books={bestSellerBooks} category="Best Seller" onAddToWishlist={handleAddToWishlist}/>
 
         {/* Carousel for Recently Added */}
         <h2 className="text-1xl font-semibold mt-8 mb-4">Recently Added</h2>
-        <BookCarousal books={recentlyAddedBooks} category="Recently Added" />
+        <BookCarousel books={recentlyAddedBooks} category="Recently Added" onAddToWishlist={handleAddToWishlist}/>
 
         {/* Carousel for Fiction */}
         <h2 className="text-2xl font-semibold mt-8 mb-4">Non-Fiction</h2>
-        <BookCarousal books={fictionBooks} category="Fiction" />
+        <BookCarousel books={fictionBooks} category="Fiction" onAddToWishlist={handleAddToWishlist}/>
         
         {/* have to work on Pagination */}
       </div>

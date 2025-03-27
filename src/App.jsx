@@ -14,19 +14,37 @@ import Cart from './Pages/Cart';
 import Homepage from './Pages/Homepage';
 import Wishlist from './Pages/Wishlist';
 import Searchpage from './Pages/Searchpage';
+import LoginForm from './Pages/LoginForm';
+import Profile from './Pages/Profile';
 
 function App() {
   const [books,setBooks] = useState([]);
+  const userId = '67df566f898b12f273c87351';
+  const handleAddToWishlist = async (book) => {
+    try {
+      const response = await axios.post('/wishlist', { userId, bookId: book.id });
+      alert('Book added to wishlist!');
+      // Optionally, you could also update the wishlist state here
+    } catch (err) {
+      alert('Failed to add book to wishlist');
+    }
+  };
 
   return (
    <div>
     {/* <header/> */}
-        {/* <Navbar/> */}
+      {/* <Navbar/> */}
+      <nav>
+        <a href="/">🏠</a>
+        {/* <a href="/login">Login</a>  */}
+      </nav>
       <Routes>
-        <Route path="/" element={<Homepage/>}/>
+        <Route path="/" element={<Homepage onAddToWishlist={handleAddToWishlist}/>}/>
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/wishlist" element={<Wishlist userId={userId}/>}/>
         <Route path="/search" element={<Searchpage/>}/>
+        <Route path="/login" element={<LoginForm/>}/> 
+        <Route path="/user" element={<Profile/>}/>
       </Routes>  
     </div>
   )

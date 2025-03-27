@@ -1,12 +1,32 @@
-# React + Vite
+# Online Book Store - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
+This project is the frontend implementation of an online book store. The application allows users to browse and search books seamlessly. It provides an intuitive and user-friendly interface to enhance the shopping experience.
 
-Currently, two official plugins are available:
+## GITHUB link to go through
+https://github.com/VeeraSreevani/Capstone-Online-Book-Store-Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **HTML5**: For structuring the web pages.
+- **CSS3**: For styling and layout design.
+- **JavaScript**: For interactivity and dynamic content.
+- **React.js**: For building reusable UI components and managing the application state.
+- **Axios**: For making API requests to the backend.
+- **Tailwind**: For responsive design and pre-styled components.
 
-## Expanding the ESLint configuration
+## Features Implemented
+- Home page with featured books and categories.
+- Search functionality to find books by title or author.
+- Book details page with descriptions, reviews, and pricing.
+- Shopping cart to manage selected books.
+- Carousels with different category books.
+- Admin page to do CURD operations
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Future Enhancements
+- **User Authentication**: Implement login and registration functionality.
+- **Wishlist**: Allow users to save books for later.
+- **Order History**: Display past purchases for registered users.
+- **Dark Mode**: Add a toggle for light/dark themes.
+- **Progressive Web App (PWA)**: Make the application installable and offline-capable.
+
+This project is a step towards creating a fully functional e-commerce platform for book enthusiasts.
